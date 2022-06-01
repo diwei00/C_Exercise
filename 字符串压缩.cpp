@@ -62,7 +62,7 @@ char* compressString(char* S) {
 }
 int main()
 {
-    char str[] = "abcdaaaaaa";
+    char str[] = "aabcccccaa";
     char* ret = compressString(str);
     printf("%s", ret);
 
