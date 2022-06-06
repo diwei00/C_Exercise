@@ -54,4 +54,5 @@ int main()
 	Inter_Num(arr, sz,0);
 	Print(arr, sz);
 	return 0;
+}
 
