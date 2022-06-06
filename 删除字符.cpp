@@ -60,10 +60,10 @@ void Delchar2(char* str, char* ret, char* tmp)
 	}
 	//拷贝回原数组
 	int len = strlen(tmp);	
-  for (i = 0; i < len; i++)
+  	for (i = 0; i < len; i++)
 	{
 
-      str[i] = tmp[i];
+        str[i] = tmp[i];
 	}
 	//只拷贝了字符，结尾添加‘\0’
 	str[i] = '\0';
@@ -74,7 +74,7 @@ int main()
 	gets_s(str);
 	char ret[3] = { 0 };
 	gets_s(ret);
-  char tmp[100] = { 0 };
+  	char tmp[100] = { 0 };
 	/*Delchar1(str, ret);*/
 	Delchar2(str, ret, tmp);
  	printf("%s\n", tmp);
