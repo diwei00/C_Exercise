@@ -1,164 +1,86 @@
-<<<<<<< HEAD
-//#include <stdio.h>
-//#include <string.h>
-//void Delchar1(char* str, char* ret)
-//{
-//	
-//	int len = strlen(str);
-//	int i = 0;
-//	int j = 0;
-//	while (str[i] != '\0')
-//	{
-//		int index = 0;
-//		if (str[i] == 'c' && str[i + 1] == 'h')
-//		{
-//			j = i;
-//			while (str[index] != '\0')
-//			{
-//				index = j + 2;
-//
-//				str[j] = str[index];
-//				index++;
-//				j++;
-//			}
-//
-//		}
-//		if (str[i] == 'c' && str[i + 1] == 'h')
-//		{
-//			;
-//		}
-//		else
-//		{
-//			i++;
-//		}
-//	}
-//}
-//void Delchar2(char* str, char* ret, char* tmp)
-//{
-//	int i = 0;
-//	int j = 0;
-//	while (str[i] != '\0')
-//	{
-//		if (str[i] != ret[0])
-//		{
-//			tmp[j] = str[i];
-//			j++;
-//		}
-//		else
-//		{
-//			if (str[i + 1] == ret[1])
-//			{
-//				i++;
-//			}
-//			else
-//			{
-//				tmp[j] = str[i];
-//				j++;
-//			}
-//		}
-//		i++;
-//	}
-//	//¿½±´»ØÔ­Êı×é
-//	int len = strlen(tmp);
-//	for (i = 0; i < len; i++)
-//	{
-//		str[i] = tmp[i];
-//	}
-//	//Ö»¿½±´ÁË×Ö·û£¬½áÎ²Ìí¼Ó¡®\0¡¯
-//	str[i] = '\0';
-//}
-//int main()
-//{
-//	char str[100] = { 0 };
-//	gets_s(str);
-//	char ret[3] = { 0 };
-//	gets_s(ret);
-//	char tmp[100] = { 0 };
-//	/*Delchar1(str, ret);*/
-//	Delchar2(str, ret, tmp);
-//	printf("%s\n", tmp);
-//	printf("%s", str);
-//	return 0;
-=======
-//#include <stdio.h>
-//#include <string.h>
-//void Delchar1(char* str, char* ret)
-//{
-//	
-//	int len = strlen(str);
-//	int i = 0;
-//	int j = 0;
-//	while (str[i] != '\0')
-//	{
-//		int index = 0;
-//		if (str[i] == 'c' && str[i + 1] == 'h')
-//		{
-//			j = i;
-//			while (str[index] != '\0')
-//			{
-//				index = j + 2;
-//
-//				str[j] = str[index];
-//				index++;
-//				j++;
-//			}
-//
-//		}
-//		if (str[i] == 'c' && str[i + 1] == 'h')
-//		{
-//			;
-//		}
-//		else
-//		{
-//			i++;
-//		}
-//	}
-//}
-//void Delchar2(char* str, char* ret, char* tmp)
-//{
-//	int i = 0;
-//	int j = 0;
-//	while (str[i] != '\0')
-//	{
-//		if (str[i] != ret[0])
-//		{
-//			tmp[j] = str[i];
-//			j++;
-//		}
-//		else
-//		{
-//			if (str[i + 1] == ret[1])
-//			{
-//				i++;
-//			}
-//			else
-//			{
-//				tmp[j] = str[i];
-//				j++;
-//			}
-//		}
-//		i++;
-//	}
-//	//¿½±´»ØÔ­Êı×é
-//	int len = strlen(tmp);
-//	for (i = 0; i < len; i++)
-//	{
-//		str[i] = tmp[i];
-//	}
-//	//Ö»¿½±´ÁË×Ö·û£¬½áÎ²Ìí¼Ó¡®\0¡¯
-//	str[i] = '\0';
-//}
-//int main()
-//{
-//	char str[100] = { 0 };
-//	gets_s(str);
-//	char ret[3] = { 0 };
-//	gets_s(ret);
-//	char tmp[100] = { 0 };
-//	/*Delchar1(str, ret);*/
-//	Delchar2(str, ret, tmp);
-//	printf("%s\n", tmp);
-//	printf("%s", str);
-//	return 0;
->>>>>>> 413b8fd776ca1b054258695a45121b664251dd6e
-//}
+
+#include <stdio.h>
+#include <string.h>
+void Delchar1(char* str, char* ret)
+{
+	
+	int len = strlen(str);
+	int i = 0;
+	int j = 0;
+	while (str[i] != '\0')
+	{
+		int index = 0;
+		if (str[i] == 'c' && str[i + 1] == 'h')
+		{
+			j = i;
+			while (str[index] != '\0')
+			{
+				index = j + 2;
+
+				str[j] = str[index];
+				index++;
+				j++;
+			}
+
+ 	}
+		if (str[i] == 'c' && str[i + 1] == 'h')
+		{
+			;
+		}
+		else
+		{
+			i++;
+		}
+	}
+}
+void Delchar2(char* str, char* ret, char* tmp)
+{
+	int i = 0;
+	int j = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] != ret[0])
+		{
+			tmp[j] = str[i];
+			j++;
+		}
+		else
+		{
+			if (str[i + 1] == ret[1])
+			{
+				i++;
+			}
+			else
+			{
+				tmp[j] = str[i];
+				j++;
+			}
+		}
+		i++;
+	}
+	//æ‹·è´å›åŸæ•°ç»„
+	int len = strlen(tmp);	
+  for (i = 0; i < len; i++)
+	{
+
+      str[i] = tmp[i];
+	}
+	//åªæ‹·è´äº†å­—ç¬¦ï¼Œç»“å°¾æ·»åŠ â€˜\0â€™
+	str[i] = '\0';
+}
+int main()
+{
+	char str[100] = { 0 };
+	gets_s(str);
+	char ret[3] = { 0 };
+	gets_s(ret);
+  char tmp[100] = { 0 };
+	/*Delchar1(str, ret);*/
+	Delchar2(str, ret, tmp);
+ 	printf("%s\n", tmp);
+	printf("%s", str);
+	return 0;
+}
+
+
+
