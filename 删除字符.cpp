@@ -63,7 +63,7 @@ void Delchar2(char* str, char* ret, char* tmp)
   	for (i = 0; i < len; i++)
 	{
 
-        str[i] = tmp[i];
+        	str[i] = tmp[i];
 	}
 	//只拷贝了字符，结尾添加‘\0’
 	str[i] = '\0';
