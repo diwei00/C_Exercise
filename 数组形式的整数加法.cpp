@@ -12,8 +12,11 @@ int* addToArrayForm(int* num, int numSize, int k, int* returnSize) {
     int count = 0;
     while (k)
     {
+        //记录i
         int tmp = i;
+        //存余数
         pa[index--] = ((k % 10) + num[i--]) % 10;
+        //有进制
         if ((((k % 10) + num[tmp]) >= 10))
         {
             if (i >= 0)
@@ -21,12 +24,15 @@ int* addToArrayForm(int* num, int numSize, int k, int* returnSize) {
                 num[i]++;
 
             }
-            if ((num[0] + k % 10) >= 10)
+            //第一位需要进制，扩容
+            if ((num[0] + k % 10) >= 10 && tmp == 0)
             {
-                int* pa2 = (int*)realloc(pa, numSize + 1);
+                int* pa2 = (int*)realloc(pa, sizeof(int) * (numSize + 1));
                 if (pa2 != NULL)
                 {
                     pa = pa2;
+                    //重叠拷贝
+                    memcpy(pa + 1, pa, sizeof(int) * numSize);
                     pa[0] = 0;
                     pa2 = NULL;
                 }
@@ -37,6 +43,7 @@ int* addToArrayForm(int* num, int numSize, int k, int* returnSize) {
         count++;
         k /= 10;
     }
+    //加法位数不够，把其他数字拷贝下来
     if (count < numSize)
     {
         int j = 0;
@@ -58,35 +65,13 @@ int* addToArrayForm(int* num, int numSize, int k, int* returnSize) {
     }
     return pa;
 }
-int* addToArrayForm2(int* num, int numSize, int k, int* returnSize) {
-    int* res = (int*)malloc(sizeof(int) * fmax(10, numSize + 1));
-    *returnSize = 0;
-    for (int i = numSize - 1; i >= 0; --i) {
-        int sum = num[i] + k % 10;
-        k /= 10;
-        if (sum >= 10) {
-            k++;
-            sum -= 10;
-        }
-        res[(*returnSize)++] = sum;
-    }
-    for (; k > 0; k /= 10) {
-        res[(*returnSize)++] = k % 10;
-    }
-    for (int i = 0; i < (*returnSize) / 2; i++) {
-        int tmp = res[i];
-        res[i] = res[(*returnSize) - 1 - i];
-        res[(*returnSize) - 1 - i] = tmp;
-    }
-    return res;
-}
 
 int main()
 {
     int arr[] = { 2,1,5 };
     int sz = sizeof(arr) / sizeof(arr[0]);
     int returnSize = 0;
-    int* pa = addToArrayForm2(arr, sz, 806, &returnSize);
+    int* pa = addToArrayForm(arr, sz, 806, &returnSize);
 
     int i = 0;
     for (i = 0; i < returnSize; i++)
